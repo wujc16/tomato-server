@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  mysql_db:
+    image: mysql:5.7.32
+    container_name: tomato_mysql
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: tomato_mysql_1231
+      # MYSQL_ROOT_HOST: "0.0.0.0"
+    volumes:
+      - ./tomato.sql:/data/application/tomato.sql
+    command: --init-file /data/application/tomato.sql
+
+  redis_cache:
+    image: redis:6.2
+    container_name: tomato_redis
+    ports: 
+      - 6379:6379
