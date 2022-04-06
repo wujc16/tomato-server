@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-07 00:11:58
- * @LastEditTime: 2022-04-07 00:20:55
+ * @LastEditTime: 2022-04-07 01:17:50
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description:
  * @FilePath: /tomato-server/dal/dao/user.go
@@ -26,7 +26,7 @@ type User struct {
 }
 
 // 表名和 tomato.sql 用户表一致
-func (user *User) TabelName() string {
+func (user *User) TableName() string {
 	return "sys_user"
 }
 
