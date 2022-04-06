@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-07 00:24:17
- * @LastEditTime: 2022-04-07 00:39:02
+ * @LastEditTime: 2022-04-07 01:19:21
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description:
  * @FilePath: /tomato-server/services/userserv.go
@@ -21,6 +21,7 @@ func GetUserInfoById(id int64) (models.UserInfo, error) {
 	}
 
 	return models.UserInfo{
+		Id:       daoUser.Id,
 		Username: daoUser.Username,
 		Mobile:   daoUser.Mobile,
 
