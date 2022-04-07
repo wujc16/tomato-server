@@ -3,10 +3,10 @@ version: '3'
 services:
 
   mysql_db:
-    image: mysql:5.7.32
+    image: mysql:5.7
     container_name: tomato_mysql
     ports:
-      - 3307:3306
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: tomato_mysql_1231
       # MYSQL_ROOT_HOST: "0.0.0.0"
@@ -19,3 +19,15 @@ services:
     container_name: tomato_redis
     ports: 
       - 6379:6379
+
+  go_server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: tomato_go_server
+    restart: always
+    depends_on:
+      - mysql_db
+      - redis_cache
+    ports:
+      - 8000:8000

@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-06 23:23:25
- * @LastEditTime: 2022-04-07 01:07:38
+ * @LastEditTime: 2022-04-07 18:38:04
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description: main
  * @FilePath: /tomato-server/main.go
@@ -19,6 +19,7 @@ func main() {
 	// 首先初始化存储
 	dal.Init()
 
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
 	// 注册路由，使用 middleware 中间件
@@ -26,3 +27,15 @@ func main() {
 
 	r.Run(":8000")
 }
+
+// func main() {
+// 	r := gin.Default()
+// 	r.GET("/user/profile", func(c *gin.Context) {
+// 		c.JSON(200, gin.H{
+// 			"name": "jinchao",
+// 			"age":  28,
+// 		})
+// 	})
+
+// 	r.Run(":8000")
+// }
