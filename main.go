@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-06 23:23:25
- * @LastEditTime: 2022-04-07 18:38:04
+ * @LastEditTime: 2022-04-08 23:58:09
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description: main
  * @FilePath: /tomato-server/main.go
@@ -19,7 +19,6 @@ func main() {
 	// 首先初始化存储
 	dal.Init()
 
-	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
 	// 注册路由，使用 middleware 中间件

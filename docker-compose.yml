@@ -19,14 +19,15 @@ services:
     ports: 
       - 6379:6379
 
-  go_server:
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
-    container_name: tomato_go_server
-    restart: always
-    links:
-      - mysql_db
-      - redis_cache
-    ports:
-      - 8000:8000
+# 暂时先不把 go_server 放到里面去
+  # go_server:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./Dockerfile
+  #   container_name: tomato_go_server
+  #   restart: always
+  #   links:
+  #     - mysql_db
+  #     - redis_cache
+  #   ports:
+  #     - 8000:8000
