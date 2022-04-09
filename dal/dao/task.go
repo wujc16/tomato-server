@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-09 00:04:27
- * @LastEditTime: 2022-04-09 01:14:34
+ * @LastEditTime: 2022-04-10 01:18:01
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description:
  * @FilePath: /tomato-server/dal/dao/task.go
@@ -13,26 +13,26 @@ import (
 )
 
 type Task struct {
-	Id  int64
-	Uid int64
+	Id  int64 `json:"id"`
+	Uid int64 `json:"uid"`
 
-	TaskTitle       string // 任务名称
-	TaskDescription string // 任务描述
+	TaskTitle       string `json:"task_title"`       // 任务名称
+	TaskDescription string `json:"task_description"` // 任务描述
 
-	Priority int8 // 重要程度 0，1，2，3，4，5
-	Urgency  int8 // 紧急程度 0，1，2，3，4，5
-	Status   int8 // 任务状态 0：初始化，1：已完成
+	Priority int8 `json:"priority"` // 重要程度 0，1，2，3，4，5
+	Urgency  int8 `json:"urgency"`  // 紧急程度 0，1，2，3，4，5
+	Status   int8 `json:"status"`   // 任务状态 0：初始化，1：已完成
 
-	TaskScore   int8 // 总结评分，0，1，2，3，4，5
-	TaskSummary string
+	TaskScore   int8   `json:"task_score"` // 总结评分，0，1，2，3，4，5
+	TaskSummary string `json:"task_summary"`
 
-	BeginAt    time.Time // 开始时间
-	DueAt      time.Time // 截止日期
-	FinishedAt time.Time // 实际完成时间
+	BeginAt    time.Time `json:"begin_at"`    // 开始时间
+	DueAt      time.Time `json:"due_at"`      // 截止日期
+	FinishedAt time.Time `json:"finished_at"` // 实际完成时间
 
 	// 其他时间信息
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 func (task *Task) TableName() string {

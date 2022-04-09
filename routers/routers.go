@@ -1,7 +1,7 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-06 23:28:43
- * @LastEditTime: 2022-04-09 23:46:14
+ * @LastEditTime: 2022-04-10 01:13:17
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description:
  * @FilePath: /tomato-server/routers/routers.go
@@ -16,6 +16,7 @@ import (
 func RegisterRoutersAndMiddlewares(r *gin.Engine) {
 	rootRouter := r.Group("/api")
 	{
+		rootRouter.Use(middlewares.CorsAllowedMiddleware)
 		// 登陆登出
 		registerAuthRouter(rootRouter)
 		// 用户信息
