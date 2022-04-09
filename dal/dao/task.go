@@ -1,14 +1,16 @@
 /*
  * @Author: jinchao.wu@bytedance.com
  * @Date: 2022-04-09 00:04:27
- * @LastEditTime: 2022-04-09 00:41:35
+ * @LastEditTime: 2022-04-09 01:14:34
  * @LastEditors: jinchao.wu@bytedance.com
  * @Description:
  * @FilePath: /tomato-server/dal/dao/task.go
  */
 package dao
 
-import "time"
+import (
+	"time"
+)
 
 type Task struct {
 	Id  int64
